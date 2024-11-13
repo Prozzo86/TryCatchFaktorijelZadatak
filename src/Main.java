@@ -35,15 +35,20 @@ public class Main {
             }
         }
 
+        try {
+            long faktorijel = izracunajFaktorijel(broj);
+            System.out.println("Faktorijel broja " + broj + " je: " + faktorijel);
+        } catch (ArithmeticException e) {
+            System.out.println("Računanje faktorijela je prekoračilo granice podržane vrijednosti.");
+        }
+    }
+
+    public static long izracunajFaktorijel(int broj) {
         long faktorijel = 1;
         for (int i = 1; i <= broj; i++) {
             faktorijel *= i;
-            if (faktorijel < 0) {
-                System.out.println("Računanje faktorijela je prekoračilo granice podržane vrijednosti.");
-                return;
-            }
         }
-
-        System.out.println("Faktorijel broja " + broj + " je: " + faktorijel);
+        return faktorijel;
     }
+
 }
